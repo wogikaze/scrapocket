@@ -29,7 +29,6 @@ javascript: (() => {
         );
     }
     const body = encodeURIComponent(lines.join('\n'));
-    alert(body)
     window.open(`https://scrapbox.io/${PROJECT}/${title}?body=${body}`, '_blank'), history.replaceState && history.replaceState({}, null, location.href);
 
 })()
