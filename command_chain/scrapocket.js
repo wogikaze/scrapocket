@@ -35,6 +35,7 @@ if (quote) {
   );
 }
 const body = encodeURIComponent(lines.join("\n"));
+const today = new Date();
 const localISODate = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
   .toISOString()
   .slice(0, 10);
