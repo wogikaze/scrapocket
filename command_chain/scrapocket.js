@@ -35,9 +35,11 @@ if (quote) {
   );
 }
 const body = encodeURIComponent(lines.join("\n"));
-const today = new Date();
+const localISODate = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+  .toISOString()
+  .slice(0, 10);
 window.open(
-  `https://scrapbox.io/${PROJECT}/${today.toISOString().slice(0, 10)}?body=${body}`,
+  `https://scrapbox.io/${PROJECT}/${localISODate}?body=${body}`,
   "_blank"
 );
 
